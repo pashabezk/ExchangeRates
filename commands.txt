@@ -1,0 +1,11 @@
+Create new project
+ng new projectName
+
+Create component
+ng g c component-name
+
+Create service
+ng g s service-name
+
+Generate environments
+ng g environments
