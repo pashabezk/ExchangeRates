@@ -1,0 +1,22 @@
+:host {
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+}
+
+.plus-icon {
+	width: 26px;
+	height: auto;
+	cursor: pointer;
+}
+
+.current-currency-block {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.time {
+	color: var(--non-accent-text-color);
+	font-size: smaller;
+}

@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+	--primary-color: #1E0342;
+	--non-accent-text-color: #757575;
+	--font-size: 14px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	min-height: 100dvh;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	font-size: var(--font-size);
+}
+
+a {
+	text-decoration: none;
+}
+
+.center1000px {
+	width: 100%;
+	max-width: 1000px;
+	margin-inline: auto;
+}
