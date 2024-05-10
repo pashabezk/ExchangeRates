@@ -10,3 +10,4 @@ Contains:
 Icons were taken from:
 https://www.svgrepo.com/svg/290061/exchange-euro
 https://www.svgrepo.com/svg/509388/plus-circle
+https://www.svgrepo.com/svg/448188/triangle

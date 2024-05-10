@@ -1,1 +1,8 @@
-<p>currency: {{currencyName}}</p>
+<p class="no-padding">{{currencyShortName}}</p>
+<div class="card-wrapper">
+	<p>{{rate}}</p>
+	<div class="difference">
+		<img src="assets/triangle-up.svg" alt="▲▼" class="triangle-icon"/>
+		<span>(+{{rateDifference}})</span>
+	</div>
+</div>

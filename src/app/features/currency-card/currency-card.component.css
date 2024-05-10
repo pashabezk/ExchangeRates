@@ -1,0 +1,29 @@
+:host {
+	display: grid;
+	grid-template-columns: 40px 1fr;
+	align-items: center;
+	gap: 10px;
+	max-width: 300px;
+}
+
+.card-wrapper {
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 5px;
+	border: solid black 2px;
+	border-radius: 5px;
+	box-shadow: 0px 10px 16px -13px rgba(0, 0, 0, 0.75);
+}
+
+.difference {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.triangle-icon {
+	height: 14px;
+	width: auto;
+}
