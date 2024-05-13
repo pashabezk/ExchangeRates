@@ -1,13 +1,21 @@
 <div class="current-currency-block">
 	<div>
-		<h2>Currency RUB</h2>
+		<h2>Currency {{userCurrency}}</h2>
 		<p title="Время последнего обновления" class="time">12.04.2024, 14:45</p>
 	</div>
-	<img src="assets/plus-circle.svg" alt="+" class="plus-icon">
+	<div class="plus-icon-wrapper">
+		<img src="assets/plus-circle.svg" alt="+" class="plus-icon" (click)="openCloseSelector()"/>
+		@if (isSelectorOpen) {
+			<app-curr-selector
+				[selectedCurrencies]="selectedCurrencies"
+				(onOutsideClick)="openCloseSelector()"
+				(onChangeCurrency)="changeCurrency($event)"
+			/>
+		}
+	</div>
 </div>
-<app-currency-card
-	[currencyName]="'dollar'"
-/>
-<app-currency-card
-	[currencyName]="'euro'"
-/>
+@for (cur of selectedCurrencies; track cur) {
+	<app-currency-card
+		[currencyShortName]="cur"
+	/>
+}

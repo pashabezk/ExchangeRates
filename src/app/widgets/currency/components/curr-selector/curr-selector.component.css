@@ -1,0 +1,15 @@
+:host {
+	position: absolute;
+	top: -10px;
+	left: calc(100% + 10px);
+
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+	padding: 10px;
+
+	background-color: white;
+	border: 1px solid var(--primary-color);
+	border-radius: 5px;
+	box-shadow: 0 10px 16px -13px rgba(0, 0, 0, 0.75);
+}

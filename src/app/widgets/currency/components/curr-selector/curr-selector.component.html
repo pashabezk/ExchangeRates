@@ -1,0 +1,7 @@
+@for (cur of allCurrencies; track cur) {
+	<app-curr-selector-item
+		currencyShortName="{{cur}}"
+		[selected]="selectedCurrencies.includes(cur)"
+		(onChange)="change($event)"
+	/>
+}

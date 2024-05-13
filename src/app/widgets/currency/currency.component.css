@@ -4,6 +4,10 @@
 	gap: 15px;
 }
 
+.plus-icon-wrapper {
+	position: relative;
+}
+
 .plus-icon {
 	width: 26px;
 	height: auto;

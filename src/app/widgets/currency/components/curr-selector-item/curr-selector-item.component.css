@@ -1,0 +1,13 @@
+:host {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.checkbox {
+	cursor: pointer;
+}
+
+.label {
+	cursor: pointer;
+}

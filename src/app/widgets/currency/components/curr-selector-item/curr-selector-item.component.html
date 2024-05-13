@@ -1,0 +1,10 @@
+<input
+	type="checkbox"
+	class="checkbox"
+	id="cur_select_item_{{currencyShortName}}"
+	[checked]="selected"
+	(change)="changeHandler()"
+/>
+<label class="label" for="cur_select_item_{{currencyShortName}}">
+	{{currencyShortName}}
+</label>
