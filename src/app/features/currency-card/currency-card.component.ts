@@ -8,6 +8,7 @@ import {Component, Input} from '@angular/core';
 })
 export class CurrencyCardComponent {
 	@Input() currencyShortName: string = "USD";
-	rate: number = 60.42;
-	rateDifference: number = 4.54;
+	@Input() rate: number = NaN;
+	@Input() rateDifference: number = 0;
+	protected readonly isNaN = isNaN;
 }

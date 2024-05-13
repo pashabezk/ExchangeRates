@@ -1,7 +1,7 @@
 <div class="current-currency-block">
 	<div>
 		<h2>Currency {{userCurrency}}</h2>
-		<p title="Время последнего обновления" class="time">12.04.2024, 14:45</p>
+		<p title="Время последнего обновления" class="time">{{getLastUpdatedTime()}}</p>
 	</div>
 	<div class="plus-icon-wrapper">
 		<img src="assets/plus-circle.svg" alt="+" class="plus-icon" (click)="openCloseSelector()"/>
@@ -9,7 +9,7 @@
 			<app-curr-selector
 				[selectedCurrencies]="selectedCurrencies"
 				(onOutsideClick)="openCloseSelector()"
-				(onChangeCurrency)="changeCurrency($event)"
+				(onChangeCurrency)="addOrRemoveCurrencyFromVisibleList($event)"
 			/>
 		}
 	</div>
@@ -17,5 +17,7 @@
 @for (cur of selectedCurrencies; track cur) {
 	<app-currency-card
 		[currencyShortName]="cur"
+		[rate]="getExchangeRate(cur)"
+		[rateDifference]="getExchangeRateDifference(cur)"
 	/>
 }

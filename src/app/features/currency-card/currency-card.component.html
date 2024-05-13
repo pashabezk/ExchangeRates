@@ -1,8 +1,21 @@
 <p class="no-padding">{{currencyShortName}}</p>
 <div class="card-wrapper">
-	<p>{{rate}}</p>
+	<p>
+		@if (isNaN(rate)) {
+			??
+		} @else {
+			{{rate}}
+		}
+	</p>
 	<div class="difference">
-		<img src="assets/triangle-up.svg" alt="▲▼" class="triangle-icon"/>
-		<span>(+{{rateDifference}})</span>
+		@if (rateDifference < 0) {
+			<img src="assets/triangle-down.svg" alt="▼" class="triangle-icon"/>
+			<span class="red">({{rateDifference.toFixed(2)}})</span>
+		} @else if (rateDifference > 0) {
+			<img src="assets/triangle-up.svg" alt="▲" class="triangle-icon"/>
+			<span class="green">(+{{rateDifference.toFixed(2)}})</span>
+		} @else {
+			<span>(0.0)</span>
+		}
 	</div>
 </div>
