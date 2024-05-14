@@ -6,9 +6,9 @@ import {CurrSelectorComponent} from "./components/curr-selector/curr-selector.co
 
 // const mockExchangeRates = {
 // 	quotes: {
-// 		RUBUSD: 223,
-// 		RUBEUR: 23,
-// 		RUBGBP: 153,
+// 		RUBUSD: 91.63,
+// 		RUBEUR: 98.80,
+// 		RUBGBP: 115.31,
 // 	},
 // 	source: "RUB",
 // 	success: true,
@@ -17,9 +17,9 @@ import {CurrSelectorComponent} from "./components/curr-selector/curr-selector.co
 //
 // const mockPrevExchangeRates = {
 // 	quotes: {
-// 		RUBUSD: 123,
-// 		RUBEUR: 123,
-// 		RUBGBP: 123,
+// 		RUBUSD: 91.24,
+// 		RUBEUR: 98.80,
+// 		RUBGBP: 116.86,
 // 	},
 // 	source: "RUB",
 // 	success: true,
