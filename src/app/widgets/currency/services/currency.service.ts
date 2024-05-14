@@ -5,6 +5,7 @@ import {CurrencyResponse} from "../models/types";
 import {environment} from "../../../../environments/environment";
 import {GlobalStorageService} from "../../../storages/global-storage/global-storage.service";
 
+/** Service that stores currencies API methods */
 @Injectable({
 	providedIn: 'root'
 })

@@ -10,9 +10,11 @@ import {BehaviorSubject} from "rxjs";
 })
 export class GlobalStorageService {
 	private _API_KEY = new BehaviorSubject<string>(environment.API_KEY);
+	/** Api key for sending queries to server */
 	API_KEY = this._API_KEY.asObservable();
 
 	private _apiTokenError = new BehaviorSubject<any>(null);
+	/** variable to store the error that occurs when sending a request */
 	apiTokenError = this._apiTokenError.asObservable();
 
 	/**

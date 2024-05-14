@@ -5,6 +5,7 @@ import {GlobalStorageService} from "../../storages/global-storage/global-storage
 import {ErrorHandlerComponent} from "../../widgets/error-handler/error-handler.component";
 import {Subscription} from "rxjs";
 
+/** Component represents home page */
 @Component({
 	selector: 'app-home-page',
 	standalone: true,
