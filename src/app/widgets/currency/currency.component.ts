@@ -63,9 +63,8 @@ export class CurrencyComponent implements OnInit, OnDestroy {
 	constructor(private globalStorageService: GlobalStorageService) {}
 
 	ngOnInit() {
-		this.loadExchangeRates();
 		this.globalStorageService.API_KEY.subscribe(()=> {
-			this.reSetInterval();
+			this.loadExchangeRates();
 		});
 	}
 
