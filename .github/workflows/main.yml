@@ -1,0 +1,32 @@
+name: Deploy on GH pages
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Adding Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Add secrets file, install dependencies and build
+        run: |
+          echo "export const API_KEY = '${{ secrets.API_KEY }}';" > src/environments/secrets.ts
+          npm i
+          npm run build:ci
+
+      - name: Deploy
+        if: success()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: dist/exchange-rates/browser
+          enable_jekyll: true
