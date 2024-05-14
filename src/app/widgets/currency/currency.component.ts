@@ -3,6 +3,7 @@ import {CurrencyCardComponent} from "../../features/currency-card/currency-card.
 import {CurrencyService} from "./services/currency.service";
 import {CurrencyResponse} from "./models/types";
 import {CurrSelectorComponent} from "./components/curr-selector/curr-selector.component";
+import {GlobalStorageService} from "../../storages/global-storage/global-storage.service";
 
 // const mockExchangeRates = {
 // 	quotes: {
@@ -59,8 +60,13 @@ export class CurrencyComponent implements OnInit, OnDestroy {
 	exchangeRate: CurrencyResponse | null = null;
 	prevExchangeRate: CurrencyResponse | null = null;
 
+	constructor(private globalStorageService: GlobalStorageService) {}
+
 	ngOnInit() {
-		// this.loadExchangeRates();
+		this.loadExchangeRates();
+		this.globalStorageService.API_KEY.subscribe(()=> {
+			this.reSetInterval();
+		});
 	}
 
 	ngOnDestroy() {
@@ -97,6 +103,8 @@ export class CurrencyComponent implements OnInit, OnDestroy {
 			error: (e) => {
 				console.error(e);
 				this.lastUpdated = new Date();
+				this.globalStorageService.setApiTokenError("Ошибка, не удалось выполнить запрос");
+				this.clearInterval();
 			},
 		});
 		this.reSetInterval();
@@ -142,7 +150,7 @@ export class CurrencyComponent implements OnInit, OnDestroy {
 		if (!this.exchangeRate) {
 			return NaN;
 		}
-		return this.exchangeRate.quotes[this.userCurrency + currency];
+		return 1 / this.exchangeRate.quotes[this.userCurrency + currency];
 	}
 
 	/**
@@ -156,8 +164,8 @@ export class CurrencyComponent implements OnInit, OnDestroy {
 		}
 
 		const quoteName = this.userCurrency + currency;
-		const current = this.exchangeRate.quotes[quoteName];
-		const previous = this.prevExchangeRate.quotes[quoteName];
+		const current = 1 / this.exchangeRate.quotes[quoteName];
+		const previous = 1 / this.prevExchangeRate.quotes[quoteName];
 		if (!previous || !current) {
 			return 0;
 		}

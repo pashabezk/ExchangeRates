@@ -6,6 +6,9 @@
 </header>
 <main class="main center1000px">
 	<app-currency/>
+	@if (tokenError) {
+		<app-error-handler/>
+	}
 </main>
 <footer class="footer center1000px">
 	<div class="mainFooterCentered">

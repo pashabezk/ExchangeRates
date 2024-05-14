@@ -1,6 +1,6 @@
 :host {
 	position: absolute;
-	top: -10px;
+	top: -8px;
 	left: calc(100% + 10px);
 
 	display: flex;
@@ -12,4 +12,11 @@
 	border: 1px solid var(--primary-color);
 	border-radius: 5px;
 	box-shadow: 0 10px 16px -13px rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 300px) {
+	:host {
+		left: unset;
+		right: calc(100% + 10px);
+	}
 }

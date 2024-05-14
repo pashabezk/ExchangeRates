@@ -1,0 +1,25 @@
+:host {
+	margin-top: 10px;
+	max-width: 500px;
+}
+
+.input-wrapper {
+	margin-top: 7px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 7px;
+}
+
+.input {
+	padding: 3px;
+}
+
+.ok-button {
+	padding: 3px;
+	border-color: var(--primary-color);
+	border-radius: 3px;
+	background-color: #4202a1;
+	color: white;
+	cursor: pointer;
+}

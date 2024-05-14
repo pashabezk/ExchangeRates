@@ -1,0 +1,14 @@
+<p>
+	Возникла ошибка при получении данных. Возможно используемый токен для работы АПИ перестал работать.
+	Чтобы восстановить работу системы попробуйте ввести свой собственный токен.
+	Получить его можно на сайте
+	<a href="https://apilayer.com/marketplace/currency_data-api" target="_blank">https://apilayer.com/marketplace/currency_data-api</a>
+</p>
+<div class="input-wrapper">
+	<input
+		class="input"
+		[(ngModel)]="newToken"
+		name="newToken"
+	/>
+	<button class="ok-button" (click)="onConfirm()">OK</button>
+</div>
